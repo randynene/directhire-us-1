@@ -67,9 +67,9 @@ component outside the system was introduced.
 | Token | Value | Use |
 | --- | --- | --- |
 | `--navy-1000` | `#070D18` | Page ground |
-| `--lime-500` | `#FCFF3C` | The single accent |
-| `--lime-hover` | `#FDFF6B` | Hover |
-| `--lime-active` | `#EFF522` | Press |
+| `--lime-500` | `#D4FF3C` | The single accent |
+| `--lime-hover` | `#E1FF6B` | Hover |
+| `--lime-active` | `#C4F522` | Press |
 | `--teal-500` | `#4A9B9B` | A strong score |
 | `--amber-500` | `#C8862A` | A caveat, an unfinished slot |
 | `--red-500` | `#E4646A` | Live indicator |
@@ -160,16 +160,16 @@ real buttons with `aria-expanded`, tabs set `role="tablist"`, the modal is
 - **Fonts.** Inter and Source Serif 4 load via `@import` in `tokens.css` from
   Google Fonts. Swap to local `@font-face` (or `next/font/local`) if licensed
   copies arrive.
-- **Verify the Next.js port.** `web/` has never been installed or run (no
-  `node_modules/`). Run it locally and compare against `static-site/index.html`,
-  which has been checked in a browser.
+- **Verify the Next.js port.** `web/` has been installed and built
+  (`npm run build` compiles cleanly, all routes prerender). Compare visually
+  against `static-site/index.html`, which has been checked in a browser.
 
-Resolved, no action needed: an earlier version of this brief flagged the
-Next.js port's tokens as still carrying the previous accent (`#D4FF3C`) and
-needing a patch from `repo_patch/tokens.css`. On inspection, no such directory
-exists and `static-site/css/tokens.css` / `web/styles/tokens.css` (and their
-paired `style.css` / `components.css`) are already byte-identical, both on the
-current `#FCFF3C` accent. No reconciliation work remains there.
+Resolved, no action needed: the design system reverted its accent from
+yellow (`#FCFF3C`) back to lime (`#D4FF3C`) per the Claude Design project's
+`repo_patch/tokens.css`. `static-site/css/tokens.css` and `web/styles/tokens.css`
+have been patched to match — both now carry the lime accent and remain
+byte-identical to each other. No other token file (type, spacing, layout,
+motion, elevation, base) changed. No reconciliation work remains there.
 
 ---
 
