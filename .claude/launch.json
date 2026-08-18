@@ -6,6 +6,12 @@
       "runtimeExecutable": "powershell.exe",
       "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "static-site/serve.ps1"],
       "port": 8891
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "powershell.exe",
+      "runtimeArgs": ["-NoProfile", "-Command", "$env:Path += ';C:\\Program Files\\nodejs'; npm.cmd run dev --prefix web"],
+      "port": 3000
     }
   ]
 }

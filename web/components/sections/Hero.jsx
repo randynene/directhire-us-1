@@ -1,9 +1,9 @@
 'use client';
 
 import { Eyebrow, SectionHeading } from '../ds/Brand';
-import { Button, CheckItem } from '../ds/Core';
+import { Button, CheckItem, AnnotationBadge } from '../ds/Core';
 import { Container } from '../ds/Layout';
-import { ShortlistPanel, CandidateCard, AnnotationBadge } from '../ds/Cards';
+import { ShortlistPanel, CandidateCard } from '../ds/Cards';
 import { useModal } from '../SearchModal';
 import { us } from '@/lib/content/us';
 
